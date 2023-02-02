@@ -32,5 +32,7 @@ Route::get('profile', [PageController::class, 'profile'])->name('profile')->midd
 Route::prefix('post')->middleware('auth')->name('post.')->group(function() {
     Route::get('/', [PageController::class, 'post'])->name('index');
     Route::post('store', [PostController::class, 'store'])->name('store');
+    Route::get('edit/{slug}', [PostController::class, 'edit'])->name('edit');
+    Route::post('update', [PostController::class, 'update'])->name('update');
 });
 Route::get('show/{slug}', [PageController::class, 'show'])->name('show');

@@ -39,4 +39,10 @@ class PostController extends Controller
 
         return redirect(route('profile'));
     }
+
+    public function edit($slug)
+    {
+        $post = Post::where('slug', $slug)->first();
+        return view('page.edit', compact('post'));
+    }
 }

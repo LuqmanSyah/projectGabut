@@ -18,7 +18,7 @@
                 @if (Auth::check())
                     @if ($post->user_id === Auth::user()->id)
                     <div class="d-flex justify-content-center mt-3">
-                        <a href="" class="btn btn-warning">Edit</a>
+                        <a href="{{ route('post.edit', $post->slug) }}" class="btn btn-warning">Edit</a>
                         <a href="" class="ms-2 btn btn-danger">Hapus</a>
                     </div>
                     @endif
